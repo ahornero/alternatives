@@ -63,6 +63,16 @@ stop0 <- function() {
   stop()
 }
 
+#' last
+#'
+#' \code{last} is based on \link{tail}
+#'
+#' It returns the last element of an array or dataframe
+#'
+#' @examples
+#' last(c(1,2,3))
+last <- function(x) { tail(x, n = 1) }
+
 # install.packages("roxygen2")
 # roxygen2::roxygenise()
 # devtools::document()
