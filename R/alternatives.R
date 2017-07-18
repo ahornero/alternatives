@@ -3,7 +3,7 @@
 #' \code{library0} is an alternative to \link{library}, which also installs the package if needed.
 #'
 #' This is an alternative function to \link{library}, which pretends to be an easier way
-#' to attach a package.
+#' to attach and install a package in the same step.
 #'
 #' @param package the name of the package, only given as a name.
 #'

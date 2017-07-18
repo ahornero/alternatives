@@ -14,7 +14,7 @@ library0(package)
 }
 \details{
 This is an alternative function to \link{library}, which pretends to be an easier way
-to attach a package.
+to attach and install a package in the same step.
 }
 \examples{
 library0(rgdal)
