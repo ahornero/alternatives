@@ -42,7 +42,7 @@ cat0 <- function(...) {
 #' @param ... R objects.
 #'
 #' @examples
-#' cat0('string', 'withoutspaces', 'andanewline')
+#' catn('string', 'withoutspaces', 'andanewline')
 #'
 catn <- function(...) {
   cat(..., '\n', sep = '')
@@ -53,7 +53,8 @@ catn <- function(...) {
 #' \code{stop0} is an alternative to \link{stop}
 #'
 #' This is indeed the same as \code{\link{stop}} but quietly, very
-#' useful when included in the middle of a source file.
+#' useful when included in the middle of a source file and you want
+#' to stop it without a warning message.
 #'
 #' @examples
 #' stop0()

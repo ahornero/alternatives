@@ -16,6 +16,6 @@ catn(...)
 This is indeed the same as \code{\link{cat0}} but with a new line
 }
 \examples{
-cat0('string', 'withoutspaces', 'andanewline')
+catn('string', 'withoutspaces', 'andanewline')
 
 }

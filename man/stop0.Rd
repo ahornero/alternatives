@@ -11,7 +11,8 @@ stop0()
 }
 \details{
 This is indeed the same as \code{\link{stop}} but quietly, very
-useful when included in the middle of a source file.
+useful when included in the middle of a source file and you want
+to stop it without a warning message.
 }
 \examples{
 stop0()
