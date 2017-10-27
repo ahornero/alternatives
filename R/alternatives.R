@@ -9,13 +9,46 @@
 #'
 #' @examples
 #' library0(rgdal)
+#' library0('rgdal')
+#' library0(username/packagename)
 #'
 #' \dontrun{
-#' library0('rgdal')
-#' }
+#' library0(rgdal, ...)
+#'
 library0 <- function(package) {
-  package_name <- deparse(substitute(package))
-  if (!require(package_name, character.only = T)) { install.packages(package_name); require(package_name, character.only = T) }
+  # Check if the package is installed
+  is.installed <- function(package) {
+    is.element(package, installed.packages()[,1])
+  }
+
+  package.expr <- substitute(package)
+
+  switch(class(package.expr),
+         name = {
+           # package given as name e.g. library0(rgdal)
+           package.name <- deparse(package.expr)
+         },
+         call = {
+           # package given as call e.g. library0(username/packagename)
+           package.name <- deparse(package.expr)
+         },
+         {
+           # package given as name e.g. library0('rgdal')
+           package.name <- package.expr
+         }
+  )
+
+  if (grepl('/', package.name)) {
+    # GitHub Package
+    # Todo ...
+  } else {
+
+    if (!is.installed(package.name)) {
+      suppressPackageStartupMessages(install.packages(package.name))
+    }
+
+    library(package.name, character.only = T)
+  }
 }
 
 #' cat0
