@@ -6,6 +6,9 @@
 \usage{
 last(x)
 }
+\arguments{
+\item{x}{data.frame or array}
+}
 \description{
 \code{last} is based on \link{tail}
 }

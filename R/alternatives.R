@@ -2,20 +2,19 @@
 #'
 #' \code{library0} is an alternative to \link{library}, which also installs the package if needed.
 #'
-#' This is an alternative function to \link{library}, which pretends to be an easier way
-#' to attach and install a package in the same step.
+#' @details This is an alternative function to \link{library}, which pretends to be an easier way
+#' to attach and install a package in the same step. You can indicate the package as a string or
+#' directly by the name.
 #'
 #' @param package the name of the package, only given as a name.
 #'
-#' @examples
-#' library0(rgdal)
-#' library0('rgdal')
-#' library0(username/packagename)
+#' @import utils
+#' @export
 #'
 library0 <- function(package) {
   # Check if the package is installed
   is.installed <- function(package) {
-    is.element(package, installed.packages()[,1])
+    is.element(package, utils::installed.packages()[,1])
   }
 
   package.expr <- substitute(package)
@@ -41,7 +40,7 @@ library0 <- function(package) {
   } else {
 
     if (!is.installed(package.name)) {
-      suppressPackageStartupMessages(install.packages(package.name))
+      utils::install.packages(package.name)
     }
 
     library(package.name, character.only = T)
@@ -55,6 +54,8 @@ library0 <- function(package) {
 #' This is indeed the same as \code{cat(..., sep = '')}
 #'
 #' @param ... R objects.
+#'
+#' @export
 #'
 #' @examples
 #' cat0('string', 'withoutspaces')
@@ -71,6 +72,8 @@ cat0 <- function(...) {
 #'
 #' @param ... R objects.
 #'
+#' @export
+#'
 #' @examples
 #' catn('string', 'withoutspaces', 'andanewline')
 #'
@@ -86,8 +89,8 @@ catn <- function(...) {
 #' useful when included in the middle of a source file and you want
 #' to stop it without a warning message.
 #'
-#' @examples
-#' stop0()
+#' @export
+#'
 stop0 <- function() {
   opt <- options(show.error.messages = FALSE)
   on.exit(options(opt))
@@ -100,9 +103,13 @@ stop0 <- function() {
 #'
 #' It returns the last element of an array or dataframe
 #'
+#' @param x data.frame or array
+#'
+#' @export
+#'
 #' @examples
 #' last(c(1,2,3))
-last <- function(x) { tail(x, n = 1) }
+last <- function(x) { utils::tail(x, n = 1) }
 
 # install.packages("roxygen2")
 # roxygen2::roxygenise()

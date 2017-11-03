@@ -1,11 +1,13 @@
 Package: alternatives
 Type: Package
 Title: Alternatives
-Version: 0.3.0
+Version: 0.3.1
 Author: Alberto Hornero
 Maintainer: Alberto Hornero <alberto@hornero.es>
-Description: Alternative functions to make R even easier
-License: GPL-3
+Description: Alternative functions to make R even easier.
+License: GPL (>= 2)
 Encoding: UTF-8
-LazyData: true
+LazyData: false
+URL: https://github.com/ahornero/alternatives
+BugReports: https://github.com/ahornero/alternatives/issues
 RoxygenNote: 6.0.1
