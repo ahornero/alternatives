@@ -12,7 +12,7 @@
 #' library0('rgdal')
 #' library0(username/packagename)
 #'
-#' \dontrun{
+#' \dontrun
 #' library0(rgdal, ...)
 #'
 library0 <- function(package) {

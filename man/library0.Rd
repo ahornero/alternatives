@@ -18,8 +18,10 @@ to attach and install a package in the same step.
 }
 \examples{
 library0(rgdal)
-
-\dontrun{
 library0('rgdal')
-}
+library0(username/packagename)
+
+\dontrun
+library0(rgdal, ...)
+
 }
