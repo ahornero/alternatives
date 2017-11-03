@@ -12,9 +12,6 @@
 #' library0('rgdal')
 #' library0(username/packagename)
 #'
-#' \dontrun
-#' library0(rgdal, ...)
-#'
 library0 <- function(package) {
   # Check if the package is installed
   is.installed <- function(package) {

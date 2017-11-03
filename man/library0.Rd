@@ -21,7 +21,4 @@ library0(rgdal)
 library0('rgdal')
 library0(username/packagename)
 
-\dontrun
-library0(rgdal, ...)
-
 }
