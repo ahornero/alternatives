@@ -4,7 +4,7 @@
 # alternatives
 Alternative functions to make R even easier
 
-# Included alternative functions
+## Included alternative functions
 
 ### library0
 This is an alternative function to [library](https://stat.ethz.ch/R-manual/R-devel/library/base/html/library.html), which pretends to be an easier way to attach and install a package in the same step.
@@ -34,4 +34,20 @@ stop0()
 It returns the last element of an array or dataframe.
 ```R
 last(c(1,2,3))
+```
+
+## How to install it?
+There are several options, my favourite one is just as follows:
+```R
+source('https://install-github.me/ahornero/alternatives')
+```
+Another, and also more popular way to install it:
+```R
+library(devtools)
+install_github('ahornero/alternatives')
+```
+One more!
+```R
+library(githubinstall)
+githubinstall('alternatives')
 ```
