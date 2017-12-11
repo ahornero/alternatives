@@ -1,7 +1,7 @@
 Package: alternatives
 Type: Package
 Title: Alternatives
-Version: 0.3.1
+Version: 0.4
 Author: Alberto Hornero
 Maintainer: Alberto Hornero <alberto@hornero.es>
 Description: Alternative functions to make R even easier.

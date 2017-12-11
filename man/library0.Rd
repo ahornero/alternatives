@@ -7,13 +7,24 @@
 library0(package)
 }
 \arguments{
-\item{package}{the name of the package, only given as a name.}
+\item{package}{the name of the package, given as a name or character string. It also supports
+the GitHub package name for both installing and loading.}
 }
 \description{
 \code{library0} is an alternative to \link{library}, which also installs the package if needed.
+It is also compatible with GitHub package without using additional libraries.
 }
 \details{
 This is an alternative function to \link{library}, which pretends to be an easier way
 to attach and install a package in the same step. You can indicate the package as a string or
-directly by the name.
+directly by the name. It also works with GitHub packages through the install-github.me service,
+which is based on \code{remotes}
+}
+\examples{
+\dontrun{
+# Load and install (if so) CRAN and GitHub R packages, and automatically as character strings or not
+library0("ggplot2")
+library0(ggplot2)
+library0(hadley/devtools)
+}
 }
