@@ -2,7 +2,7 @@
 [![Licence](https://img.shields.io/badge/license-GPLv3-orange.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
 
 # alternatives
-Alternative functions to make R even easier
+Alternative functions to make R scripting even easier and more user-friendly. For instance, it includes the *library0()* function which is a library function replacement to install (if needed) and load libraries in one step; and also including GitHub packages installation compatibility. There are other alternatives, such as *cat0*, *catn* or *stop0* in other to modify the behaviour of both *cat* and *stop* functions respectively.
 
 ## Included alternative functions
 
