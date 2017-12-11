@@ -4,11 +4,13 @@
 \alias{library0}
 \title{library0}
 \usage{
-library0(package)
+library0(package, force.update = FALSE)
 }
 \arguments{
 \item{package}{the name of the package, given as a name or character string. It also supports
 the GitHub package name for both installing and loading.}
+
+\item{force.update}{Optional. Logical. It indicates if the package should be updated even if is installed.}
 }
 \description{
 \code{library0} is an alternative to \link{library}, which also installs the package if needed.

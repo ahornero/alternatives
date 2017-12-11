@@ -10,6 +10,7 @@
 #'
 #' @param package the name of the package, given as a name or character string. It also supports
 #' the GitHub package name for both installing and loading.
+#' @param force.update Optional. Logical. It indicates if the package should be updated even if is installed.
 #'
 #' @import utils
 #' @export
@@ -20,10 +21,18 @@
 #' library0(ggplot2)
 #' library0(hadley/devtools)
 #' }
-library0 <- function(package) {
+library0 <- function(package, force.update = FALSE) {
 
   is.installed <- function(package) {
     is.element(package, utils::installed.packages()[,1])
+  }
+
+  detach.package <- function(package)
+  {
+    item <- paste("package", package, sep = ":")
+    while (item %in% search()) {
+      detach(item, unload = TRUE, character.only = TRUE)
+    }
   }
 
   # Original library function from R Core, just to avoid warnings from R CMD check results
@@ -318,8 +327,12 @@ library0 <- function(package) {
 
   if (grepl('/', package.name)) {
     # GitHub Package
-
     package.name.gh <- unlist(strsplit(x = package.name, split = '/'))[2]
+
+    if (force.update) {
+      detach.package(package.name.gh)
+      remove.packages(package.name.gh)
+    }
 
     if (!is.installed(package.name.gh)) {
       source(paste0("https://install-github.me/", package.name))
@@ -329,6 +342,10 @@ library0 <- function(package) {
 
   } else {
     # CRAN Package
+    if (force.update) {
+      detach.package(package.name)
+      remove.packages(package.name)
+    }
 
     if (!is.installed(package.name)) {
       utils::install.packages(package.name)
