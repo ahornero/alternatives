@@ -7,9 +7,15 @@ Alternative functions to make R scripting even easier and more user-friendly. Fo
 ## Included alternative functions
 
 ### library0
-This is an alternative function to [library](https://stat.ethz.ch/R-manual/R-devel/library/base/html/library.html), which pretends to be an easier way to attach and install a package in the same step.
+This is an alternative function to [library](https://stat.ethz.ch/R-manual/R-devel/library/base/html/library.html), which pretends to be an easier way to attach and install a package in the same step and it also installs the package if needed. It is also compatible with GitHub packages without using additional libraries.
+
+You can indicate the package as a string or directly by the name. It also works with GitHub packages through the install-github.me service, which is based on [remotes](https://github.com/r-lib/remotes)
+
 ```R
-library0(rgdal)
+# Load and install (if so) CRAN and GitHub R packages, and automatically as character strings or not
+library0("ggplot2")
+library0(ggplot2)
+library0(hadley/devtools)
 ```
 
 ### cat0
