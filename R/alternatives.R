@@ -420,5 +420,29 @@ stop0 <- function() {
 #' last(c(1,2,3))
 last <- function(x) { utils::tail(x, n = 1) }
 
+#' progress
+#'
+#' \code{progress} is an original function from \url{https://github.com/klmr/rcane/blob/1bb57f8a4340b6ac618f98fb9f81964caea9ab8c/system.R#L24}
+#'
+#' It is an alternative function to \link{txtProgressBar}
+#' and \link{setTxtProgressBar}
+#'
+#' @param x current position
+#' @param max max range
+#'
+#' @export
+#'
+#' @examples
+#' progress(25)
+progress <- function(x, max = 100) {
+  percent <- x / max * 100
+  cat(sprintf('\r[%-50s] %d%%',
+              paste(rep('=', percent / 2), collapse = ''),
+              floor(percent)))
+  if (x == max)
+    cat('\n')
+}
+
+
 # roxygen2::roxygenise()
 # devtools::document()
